@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Indie+Flower&display=swap');
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #1e2a47, #0f2029); /* Smooth Gradient Background */
+    font-family: "Atma", 'Balsamiq Sans', sans-serif;
+    color: #ecf0f1; /* Light Text Color */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+h1 {
+    font-size: 36px;
+    color: #ecf0f1;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* Controls Section */
+#controls {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ecf0f1;
+}
+
+/* Strict Mode Styling */
+#strict-mode {
+    cursor: pointer;
+    background-color: #e74c3c;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#strict-mode:hover {
+    transform: scale(1.1);
+    background-color: #c0392b; /* Darker Red */
+}
+
+/* Simon Game Board */
+#simon-board {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+/* Simon Buttons Styling */
+.simon-btn {
+    width: 120px;
+    height: 120px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.3s ease, opacity 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    opacity: 0.9;
+}
+
+/* Active Button Styles */
+.simon-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Colors */
+.top-left {
+    background-color: #27ae60; /* Green */
+}
+
+.top-right {
+    background-color: #e02727; /* Orange */
+}
+
+.bottom-left {
+    background-color: #f39c12; /* Yellow */
+}
+
+.bottom-right {
+    background-color: #2980b9; /* Blue */
+}
+
+/* Level Count Styling */
+.level-count {
+    font-size: 32px;
+    color: #fff;
+    background-color: #8e44ad; /* Purple */
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeLevel 1s ease-out;
+}
+
+/* Button Styling for Start Button */
+#power-btn {
+    font-family: 'Balsamiq Sans', sans-serif;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #2ecc71; /* Bright Green */
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+/* Power Button Hover Effect */
+#power-btn:hover {
+    background-color: #27ae60; /* Darker Green */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Disabled Button Styling */
+#power-btn:disabled {
+    background-color: #bdc3c7; /* Gray */
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Keyframe Animation for Level Fade */
+@keyframes fadeLevel {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 600px) {
+    #simon-board {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        max-width: 100%;
+    }
+
+    .simon-btn {
+        width: 100px;
+        height: 100px;
+        font-size: 18px;
+    }
+
+    .level-count {
+        font-size: 28px;
+        padding: 10px 20px;
+    }
+
+    #power-btn {
+        padding: 12px 25px;
+        font-size: 18px;
+    }
+}
